@@ -1,0 +1,947 @@
+---
+title: "Predictive Analysis in Medicine"
+author: "Kamarul Imran Musa"
+affiliation: "School of Medical Sciences, Universiti Sains Malaysia"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r}
+#| include: false
+
+## Global options
+knitr::opts_chunk$set(cache = TRUE)
+```
+
+\newpage
+
+# Introduction
+
+## Motivation for ML
+
+Physicians' minds, no matter how bright or experienced, are fallible --
+-unable to adequately store, recall, and correctly analyze the millions
+of pieces of medical information needed to optimally care for patients.
+
+With machine learning (ML) and predictive analytics, clinicians'
+decisions can be augmented by computers rather than relying solely on
+their brains.
+
+## Trend of ML in scholarly articles
+
+The number of scientific publications found when using the search term
+machine learning has increased more than 3-fold during the past 5 years.
+
+More than 6500 articles on this topic alone included in PubMed in 2018.
+Some comparative studies have found that ML-based analyses can identify
+novel risk predictors and improve the prognostic accuracy of models
+beyond traditional methods.1
+
+More info here
+<https://jamanetwork.com/journals/jama/article-abstract/2756195>
+
+# Inference and prediction
+
+AI technology can have a rapid impact in medicine is computational
+statistics, which uses machine learning methods in combination with
+traditional statistics to create predictive models.
+
+These models can then be used in medicine to improve prognostication,
+optimize the delivery of care, or personalize patient management or
+therapeutic choice
+
+## Inference
+
+Given a set of data you want to infer how the output is generated as a
+function of the data.
+
+## Prediction
+
+Given a new measurement, you want to use an existing data set to build a
+model that reliably chooses the correct identifier from a set of
+outcomes.
+
+Machine learning can be used to create predictive models for use in
+medicine.Authors developed a support vector machine (a machine
+learningmethod) classifier to predict clinical deterioration on magnetic
+resonance imaging indices of patients with repaired Tetralogy of Fallot.
+While not perfectly accurate in predicting clinical deterioration, the
+performance of their classifier in various scenarios favourably compares
+to the majority of clinical predictive models developed using classic
+statistical methods. This method was also able to identify and rank the
+critical factors that contributed to achieving accurate predictions.
+
+More infro please refer
+<https://academic.oup.com/ehjcimaging/article/19/7/727/4930737?login=true>
+
+# Groups of predictive analytics
+
+Predictive analytics : It is a mathematical approach which makes use of
+statistics and past trends for the future prediction. It targets to work
+upon the furnished statistics to attain an end conclusion after an event
+has been triggered.
+
+Machine learning: It is a branch of computer science which makes use of
+cognitive mastering strategies to program their structures besides the
+need of being explicitly programmed.
+
+## Supervised learning
+
+Supervised learning is a machine learning approach that's defined by its
+use of labeled datasets.
+
+Classification problems: use an algorithm to accurately assign test data
+into specific categories, such as separating apples from oranges. Or, in
+the real world, supervised learning algorithms can be used to classify
+spam in a separate folder from your inbox.
+
+Regression problems: is another type of supervised learning method that
+uses an algorithm to understand the relationship between dependent and
+independent variables. Regression models are helpful for predicting
+numerical values based on different data points, such as sales revenue
+projections for a given business.
+
+# R programming language
+
+R is a language and environment for statistical computing and graphics.
+It is a GNU project which is similar to the S language and environment
+which was developed at Bell Laboratories (formerly AT&T, now Lucent
+Technologies) by John Chambers and colleagues. R can be considered as a
+different implementation of S. There are some important differences, but
+much code written for S runs unaltered under R.
+
+## R software
+
+R software is a free software environment for statistical computing and
+graphics. It compiles and runs on a wide variety of UNIX platforms,
+Windows and MacOS.
+
+## RStudio IDE
+
+RStudio is an integrated development environment (IDE) for R. It
+includes a console, syntax-highlighting editor that supports direct code
+execution, as well as tools for plotting, history, debugging and
+workspace management.
+
+RStudio is available in open source and commercial editions and runs on
+the desktop (Windows, Mac, and Linux) or in a browser connected to
+RStudio Server or RStudio Workbench.
+
+For more information, click [RStudio \| Open source & professional
+software for data science teams - RStudio](https://www.rstudio.com/)
+
+RStudio Cloud
+
+RStudio Cloud is a lightweight, cloud-based solution that allows anyone
+to do, share, teach and learn data science online. You may register for
+the Cloud Free version here [RStudio
+Cloud](https://rstudio.cloud/plans/free)
+
+And you click this link to visit our workshop [RStudio
+space](https://rstudio.cloud/spaces/243714/join?access_code=29Ljj8nzcDPvjkETbD4gUrH3N5MfTT2f2qz8wGY0)
+
+## Packages and functions
+
+-   Packages: Currently, the CRAN package repository features 18908
+    available packages.. Link to list of packages
+    https://cran.r-project.org/
+
+-   Functions: Functions are useful when you want to perform a certain
+    task multiple times. A function accepts input arguments and produces
+    the output by executing valid R commands that are inside the
+    function.
+
+-   pipe: The %\>% pipe is widely used for data manipulations and is
+    automatically loaded with Tidyverse. The pipe operator is used to
+    execute multiple operations that are in sequence requiring the
+    output of the previous operation as their input argument.
+
+# Using R for Predictive Analytics and Machine Learning
+
+Below are two very useful resources for doing predictive analytics and
+ML in R. Both of them are available online and also as physical books.
+
+Tidy Modeling with R The book is also live at [Tidy Modeling with R
+(tmwr.org)](https://www.tmwr.org/)
+
+![Tidy Modeling with R](cover.png){width="557"}
+
+**tidymodels** package is a metapackage. It contains these *CORE*
+packages
+
+1.  **rsample** : for sample splitting (e.g. train/test or
+    cross-validation)
+2.  **recipes** : for pre-processing
+3.  **workflow** : workflows bundle pre-processing, modeling, and
+    post-processing together
+4.  **tune** : tune helps you optimize the hyperparameters of your model
+    and pre-processing steps.
+5.  **parsnip** : for specifying the model
+6.  **yardstick** : for evaluating the model
+
+But there are other packages (Core and Specialized) inside
+**tidymodels**
+
+Hands-on Machine Learning with R This book also live at
+
+[Hands-On Machine Learning with R
+(bradleyboehmke.github.io)](https://bradleyboehmke.github.io/HOML/)
+
+![Hands-on Machine Learning with R](homl-cover.jpg){width="498"}
+
+# Datasets
+
+We are using
+
+-   Dataset 1: **metabsyndrome.dta** for a regression problem
+
+    ![](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Obesity6.JPG/300px-Obesity6.JPG)
+
+-   Dataset 2: **stroke_fatality.dta** for a classification problem
+
+![](https://www.cdc.gov/stroke/images/Stroke-Medical-Illustration.jpg?_=77303)
+
+Both datasets are in STATA format. Other common medical datasets formats
+include
+
+-   SPSS format
+
+-   SAS format
+
+-   MS Excel format (require **readxl** package to read)
+
+# Regression
+
+For full documentation, you may refer to the tidymodelling book or
+webpage.
+
+Refer: https://www.tmwr.org/
+
+## Preparation
+
+Make sure you are in RStudio IDE on the cloud (RStudio Cloud) or on your
+device. If you are not familiar with RStudio IDE, it is better to use
+the RStudio Cloud. You can register for the free version here [RStudio
+Cloud](https://rstudio.cloud/plans/free) and then join our workshop
+space.
+
+-   **tidyverse** : collection of R packages designed for data science.
+    All packages share an underlying design philosophy, grammar, and
+    data structures.
+-   **haven** : Haven enables R to read and write various data formats
+    used by other statistical packages
+-   **caret** : short for Classification And REgression Training is a
+    set of functions that attempt to streamline the process for creating
+    predictive models.
+-   **gtsummary** : provides an elegant and flexible way to create
+    publication-ready summary tables in R.
+
+```{r}
+library(tidyverse)
+library(haven)
+library(tidymodels)
+library(caret)
+library(gtsummary)
+```
+
+## Read data
+
+-   we will use a dataset named `metabolicsyndrome.dta`
+-   it is in **STATA** format
+-   we will read then convert it to an R object of class `data.frame`
+
+```{r}
+trig <- read_dta('metabsyndrome.dta')
+trig <- trig %>% data.frame()
+glimpse(trig)
+```
+
+-   The outcome variable is `ftriglz` (fasting TG). The higher the
+    value, the higher the risk for someone to get cardiovascular
+    diseases.
+-   The rest are potential covariates except for `id` (the ID for
+    participants)
+
+## EDA
+
+It is important to perform exploratory data analysis (EDA). in the next
+steps, we will
+
+-   perform data exploration
+-   select all columns (variables) except for variable `id`
+-   `gtsummary::tbl_summary()`
+
+```{r}
+trig %>%
+  select(-id) %>%
+  tbl_summary()
+```
+
+Plots are useful to help us see the pattern and distribution of data.
+Let's do a histogram for variable `ftrigliz`. Of course, you shoould (if
+feasible) examine all variables in your data.
+
+-   from dataset `trig`, we will use the `ggplot()` to make plot
+-   specify the type of plot using `geom_x()`
+-   specify the theme
+
+```{r}
+trig %>% 
+  ggplot(aes(x = ftrigliz)) + 
+  geom_histogram() +
+  theme_bw()
+```
+
+-   convert the outcome variable (variable `ftrigliz`) using log 10
+
+```{r}
+trig <- trig %>%
+  mutate(ftrigliz = log10(ftrigliz)) 
+```
+
+Now, let's reexamine the plot. You will see a more normally distributed
+fasting Tg
+
+```{r}
+trig %>% 
+  ggplot(aes(x = ftrigliz)) + 
+  geom_histogram() +
+  theme_bw()
+```
+
+## Split data
+
+As previously discussed, the fasting triglyceride distribution is
+skewed. The worry here with simple splitting is that the training set or
+the testing set will be imbalanced.
+
+A stratified random sample would conduct the 80/20 split within each of
+these data subsets and then pool the results together. In **rsample**,
+this is achieved using the strata argument:
+
+Before that, because of possible conflicts (more than one packages use
+the same name of function but each function acts differently), we use
+`conflict_prefer()` from **conflicted** package.
+
+If you receive an error saying that the package is not available, you
+need to install the package. To do that you may either:
+
+-   go to `Packages`, then click `Install`. Write the name of the
+    package (in this case **conflicted**) in the search box. Then click
+    `Install`
+-   or you may go to `Console` pane and type
+    `install.packages(**name of the package**, dependence = TRUE)`
+
+```{r}
+conflicted::conflict_prefer("all_numeric", "recipes")
+tidymodels_prefer()
+```
+
+We can now split the data into the training and testing dataset
+
+```{r}
+set.seed(123)
+trig_split <- initial_split(trig, prop = 0.8, strata = ftrigliz)
+trig_split
+```
+
+And now extract the training data from the split
+
+```{r}
+trig_train <- training(trig_split)
+```
+
+And extract the testing data from the split
+
+```{r}
+trig_test <- testing(trig_split)
+```
+
+## Choose model
+
+In **tidymodels**, the approaches involve:
+
+1.  Specifying the type of model based on its mathematical structure
+    (e.g., linear regression, random forest, K-nearest neighbors, etc).
+2.  Specifying the engine for fitting the model. Most often this
+    reflects the software package that should be used, like Stan or
+    glmnet. These are models in their own right, and parsnip provides
+    consistent interfaces by using these as engines for modeling.
+3.  When required, declare the mode of the model. The mode reflects the
+    type of prediction outcome. For numeric outcomes, the mode is
+    regression; for qualitative outcomes, it is classification.13 If a
+    model algorithm can only address one type of prediction outcome,
+    such as linear regression, the mode is already set.
+
+For more information, please refer : https://www.tmwr.org/models.html
+
+Let's start with a well-known linear regression model
+
+$$ y_i = \beta_0 + \beta_1x_1 + ... + \beta_px_{pi} $$
+
+where the model equation is
+
+$$ \hat{y}_i = \hat{\beta}_0 + \hat{\beta_1}x_1 + ... + \hat{\beta_p}x_{pi} $$
+
+In R, the estimation can be performed using the `linear_reg()` for
+linear regression. You may then choose the engine. In this example, we
+use `lm`.
+
+```{r}
+lm_model <- 
+  linear_reg() %>%
+  set_engine('lm')
+```
+
+## Workflow
+
+The workflow is important in two ways:
+
+1.  First, using a workflow concept encourages good methodology since it
+    is a single point of entry to the estimation components of a data
+    analysis.
+2.  Second, it enables the user to better organize their projects.
+
+A workflow always requires a **parsnip** model object. In this very
+simple example, we just tell R that for our workflow, we add a linear
+regression model to the workflow. We name this workflow as `lm_wflow`.
+
+```{r}
+lm_wflow <- 
+  workflow() %>%
+  add_model(lm_model)
+lm_wflow
+```
+
+We then extend the same workflow to include the formula for the model.
+
+```{r}
+lm_wflow <- 
+  lm_wflow %>%
+  add_formula(ftrigliz ~ sex + age + height + weight + waist + 
+                neck + xante + fhirsuti + smoking + sbpl1 + 
+                dbpl1 + hdl + ldl + fbs + hba1c )
+lm_wflow
+```
+
+You can see that the workflow is now extended to include
+
+1.  the preprocessor formula
+2.  the model
+
+You can add more things to the workflow. But of course, this is beyond
+the scope of this workshop.
+
+## Fit model
+
+The `fit()` enables us to fit the model. Here, we transfer the workflow
+to the fitting process.
+
+```{r}
+lm_fit <- fit(lm_wflow, trig_train)
+```
+
+## Evaluate
+
+The `last_fit()` provides the performance metrics for the model.
+
+```{r}
+final_lm_res <- last_fit(lm_wflow, trig_split)
+final_lm_res
+```
+
+And the extract the performance metrics, we can :
+
+```{r}
+collect_metrics(final_lm_res)
+```
+
+We can extract the values (of the testing set) predicted from the our
+model. There will be 870 observations. And for this example, we will
+only the top 5.
+
+```{r}
+collect_predictions(final_lm_res) %>% 
+  slice(1:5)
+```
+
+## Performance metrics
+
+Evaluate on test set
+
+```{r}
+trig_test_res <- predict(lm_fit, 
+                         new_data = trig_test %>% select(-ftrigliz))
+```
+
+```{r}
+trig_test_res <- bind_cols(trig_test_res, 
+                           trig_test %>% select(ftrigliz))
+trig_metrics <- metric_set(rmse, rsq, mae)
+trig_metrics(trig_test_res, truth = ftrigliz, estimate = .pred)
+```
+
+# Classification
+
+A classification problem requires that examples be classified into one
+of two or more classes. A classification can have real-valued or
+discrete input variables So, the dataset contain variables which one of
+them is the outcome variable. In medicine, we always call this type of
+variable as the categorical-outcome variable.
+
+## Preparation
+
+```{r}
+library(tidyverse)
+library(haven)
+library(tidymodels)
+library(caret)
+library(gtsummary)
+```
+
+## Read data
+
+This dataset comes from analysis patients admitted to Hospital USM. In
+the dataset:
+
+-   Outcome variable is survival (dead or alive) of discharge
+-   Dataset is in STATA format
+
+```{r}
+dead <- read_dta('stroke_fatality.dta')
+```
+
+## Explore data
+
+We you read STATA, SPSS or SAS datasets, they will always contain
+numeric values that represent categories or groups.
+
+-   `glimpse()` will provide a quick and convenient way to check the
+    types of data we have
+-   `dbl + lbl` : a variable coded in STATA as numeric but actually a
+    factor variable
+-   `dlb` : a double variable
+-   `date` : variable for date
+
+```{r}
+glimpse(dead)
+```
+
+We will quickly convert all `dbl + lbl()` variables to factors variables
+using
+`mutate(across(where(type of variable), as what type of variable))`
+
+```{r}
+dead <- 
+  dead %>%
+  mutate(across(where(is.labelled), ~as_factor(.x)))
+```
+
+In real data, the number of variables are many. For this workshop, we
+will only examine
+
+-   status2 : dead or alive
+-   gcs : the severity of stroke (the higher, the lesser)
+-   age
+-   sbp : systolic blood pressure
+-   dbp : diastolic blood pressure
+-   hr : heart rate
+-   dm : diabetes (yes or no)
+-   hpt : hypertension (yes or no)
+-   hb : haemoglobin
+-   plat : platlet
+-   wbc : white cell count
+-   na : sodium
+-   potas : potassium
+-   icd10cat2 : types of stroke
+-   referral2cat : referred from where
+
+```{r}
+dead <- 
+  dead %>%
+  select(status2, gcs, sbp:hpt2, hb:potas, icd10cat2)
+glimpse(dead)
+```
+
+## Additional package
+
+We will load a new package **vif**. This is a package for constructing
+variable importance plots (VIPs). VIPs are part of a larger framework
+referred to as interpretable machine learning (IML), Make sure you have
+installed the **vif** package.
+
+```{r}
+library(vip)
+```
+
+## Split data
+
+We set the seed so every time we run the same model, we will get the
+same answer.
+
+```{r}
+set.seed(123)
+```
+
+Let's split the data
+
+-   Split into 60:40 ratio (more people prefer to perform 70:30 or 80:20
+    split)
+-   specify the strata so the proportion of outcome distributions are
+    similar in the training and testing dataset
+
+```{r}
+dead_split <- initial_split(dead, prop = 0.6, strata = 'status2')
+dead_train <- training(dead_split)
+dead_test <- testing(dead_split)
+```
+
+## Preprocessing using recipe
+
+With **recipes**, you can use **dplyr**-like pipeable sequences of
+feature engineering steps to get your data ready for modeling.
+
+For our example, to create a recipe containing - an outcome plus six
+predictors - log transformed variables `sbp, dbp, age` - remove missing
+data - categorize infrequent groups of factor variables - normalize
+numerical variables - generate dummy variables for all factor
+variables - remove variables that contain only a single value -
+potentially remove variables that have large absolute correlations with
+other variables
+
+```{r}
+dead_rec <-
+  recipe(status2 ~ gcs + sbp + dbp + hb + plat + wbc + na + potas + 
+           cbs + urea + hpt2 + icd10cat2,
+         data = dead_train) %>%
+  step_log(all_numeric()) %>% 
+  step_novel(all_nominal(), -all_outcomes()) %>%
+  step_normalize(all_numeric(), -all_outcomes()) %>% 
+  step_dummy(all_nominal(), -all_outcomes()) %>%
+  step_zv(all_numeric(), -all_outcomes()) %>%
+  step_impute_knn(all_numeric()) %>%
+  step_corr(all_predictors(), threshold = 0.7, method = "spearman") 
+dead_rec
+```
+
+### prep data
+
+check if all of our preprocessing steps from above actually worked, we
+can proceed as follows:
+
+```{r}
+prepped_data <- 
+  dead_rec %>% # use the recipe object
+  prep() %>% # perform the recipe on training data
+  juice() # extract only the preprocessed dataframe 
+```
+
+Let's take a peek at the prepped data
+
+```{r}
+glimpse(prepped_data)
+```
+
+## Specify model
+
+### Logistic regression model
+
+```{r}
+log_spec <- # your model specification
+  logistic_reg() %>%  # model type
+  set_engine(engine = "glm") %>%  # model engine
+  set_mode("classification") # model mode
+
+# Show your model specification
+log_spec
+```
+
+### Random forest method
+
+```{r}
+library(ranger)
+
+rf_spec <- 
+  rand_forest() %>% 
+  set_engine("ranger", importance = "impurity") %>% 
+  set_mode("classification")
+
+rf_spec
+```
+
+### Boosted tree (XGBoost) method
+
+```{r}
+library(xgboost)
+
+xgb_spec <- 
+  boost_tree() %>% 
+  set_engine("xgboost") %>% 
+  set_mode("classification") 
+
+xgb_spec
+```
+
+### k-nearest neighbours method
+
+```{r}
+knn_spec <- 
+  nearest_neighbor(neighbors = 4) %>% # we can adjust the number of neighbors 
+  set_engine("kknn") %>% 
+  set_mode("classification") 
+```
+
+### Neural network method
+
+```{r}
+library(keras)
+
+nnet_spec <-
+  mlp() %>%
+  set_mode("classification") %>% 
+  set_engine("keras", verbose = 0) 
+```
+
+## Create workflow
+
+### Logistic regression
+
+```{r}
+log_wflow <- # new workflow object
+ workflow() %>% # use workflow function
+ add_recipe(dead_rec) %>%   # use the new recipe
+ add_model(log_spec)   # add your model spec
+
+# show object
+log_wflow
+```
+
+### Random forest
+
+```{r}
+rf_wflow <-
+ workflow() %>%
+ add_recipe(dead_rec) %>% 
+ add_model(rf_spec) 
+```
+
+### XGBoost
+
+```{r}
+xgb_wflow <-
+ workflow() %>%
+ add_recipe(dead_rec) %>% 
+ add_model(xgb_spec)
+```
+
+### k-nearest neigbours
+
+```{r}
+knn_wflow <-
+ workflow() %>%
+ add_recipe(dead_rec) %>% 
+ add_model(knn_spec)
+```
+
+### Neural network
+
+```{r}
+nnet_wflow <-
+ workflow() %>%
+ add_recipe(dead_rec) %>% 
+ add_model(nnet_spec)
+```
+
+## Evaluate models
+
+Let's take model based on
+
+-   logistic regression
+-   random forest
+
+### Logistic regression
+
+```{r}
+log_res <- 
+  log_wflow %>% 
+  last_fit(dead_split) 
+log_res
+```
+
+```{r}
+rf_res <- 
+  rf_wflow %>%
+  last_fit(dead_split)
+rf_res
+```
+
+```{r}
+knn_res <- 
+  knn_wflow %>%
+  last_fit(dead_split)
+knn_res
+```
+
+## Performance metrics
+
+```{r}
+log_test_performance <- log_res %>%  
+  collect_metrics(summarize = TRUE)
+log_test_performance
+```
+
+```{r}
+rf_test_performance <- rf_res %>%
+  collect_metrics()
+rf_test_performance
+```
+
+## Collect predictions
+
+Predictions performed on the test set
+
+```{r}
+log_pred <- 
+  log_res %>%
+  collect_predictions()
+log_pred
+```
+
+```{r}
+rf_pred <- 
+  rf_res %>%
+  collect_predictions()
+rf_pred
+```
+
+## Confusion metric
+
+```{r}
+log_pred %>% 
+  conf_mat(status2, .pred_class) 
+```
+
+```{r}
+rf_pred %>% 
+  conf_mat(status2, .pred_class)
+```
+
+## ROC curve
+
+```{r}
+log_pred %>% 
+  group_by(id) %>% # id contains our folds
+  roc_curve(status2, .pred_alive) %>% 
+  autoplot()
+```
+
+```{r}
+rf_pred %>% 
+  group_by(id) %>% # id contains our folds
+  roc_curve(status2, .pred_alive) %>% 
+  autoplot()
+```
+
+## Compare models
+
+```{r}
+log_metrics <- 
+  log_res %>% 
+  collect_metrics(summarise = TRUE) %>%
+  mutate(model = "Logistic Regression") # add the name of the model to every row
+```
+
+```{r}
+rf_metrics <- 
+  rf_res %>% 
+  collect_metrics(summarise = TRUE) %>%
+  mutate(model = "Random Forest")
+```
+
+```{r}
+knn_metrics <- 
+  knn_res %>% 
+  collect_metrics(summarise = TRUE) %>%
+  mutate(model = "Knn")
+```
+
+Create dataframe with all models
+
+```{r}
+log_metrics ; rf_metrics ; knn_metrics
+model_compare <- bind_rows(log_metrics, 
+                           rf_metrics, 
+                           knn_metrics) 
+```
+
+## Evaluation on **test** set
+
+### fit with the best model
+
+Tidymodels provides the function `last_fit()` which fits a model to the
+whole training data and evaluates it on the test set. We just need to
+provide the workflow object of the best model as well as the data split
+object (not the training data).
+
+```{r}
+last_fit_log <- last_fit(log_wflow,  
+                         split = dead_split, 
+                         metrics = metric_set( 
+                           precision, 
+                           f_meas, 
+                           accuracy, kap,
+                           roc_auc, sens, spec)
+                         )
+```
+
+### Assess model
+
+```{r}
+last_fit_log %>% 
+  collect_metrics()
+```
+
+# Discussion
+
+The study by Samad et al. demonstrates that some machine learning
+methods can be successfully applied even when limited samples are
+available. This type of example is particularly important for fields
+such as paediatric cardiology, where machine learning methods have not
+historically been used but where they could generate important insights.
+
+For more info head to
+<https://academic.oup.com/ehjcimaging/article/19/7/727/4930737?login=true>
+
+Although a few risk scores have been recommended by practice guidelines
+(eg, the pooled cohort equation for cardiovascular risk and the
+CHA2DS2-VASc score6,7), even these have been inconsistently applied and
+often fail to affect care decisions even when they are calculated. Why?
+
+More info here
+<https://jamanetwork.com/journals/jama/article-abstract/2756195>
+
+# References
+
+1.  James, G., Witten, D., Hastie, T., & Tibshirani, R. (2021). An
+    introduction to statistical learning (2nd ed.) \[PDF\]. Springer.
+2.  Boehmke, Brad, and Brandon M. Greenwell. Hands-on machine learning
+    with R. Boca Raton, FL: CRC Press, 2020. Print.
+3.  [Classification with Tidymodels, Workflows and Recipes \| Jan
+    Kirenz](https://www.kirenz.com/post/2021-02-17-r-classification-tidymodels/)
+4.  https://www.tmwr.org/splitting.html
+5.  [Tidymodels: tidy machine learning in R
+    (rebeccabarter.com)](https://www.rebeccabarter.com/blog/2020-03-25_machine_learning/?s=08)
+6.  [RStudio
+    Education](https://education.rstudio.com/blog/2020/02/conf20-intro-ml/)
+7.  [A Gentle Introduction to tidymodels · R Views
+    (rstudio.com)](https://rviews.rstudio.com/2019/06/19/a-gentle-intro-to-tidymodels/)
