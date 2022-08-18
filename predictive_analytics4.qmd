@@ -47,8 +47,12 @@ Some comparative studies have found that ML-based analyses can identify
 novel risk predictors and improve the prognostic accuracy of models
 beyond traditional methods.1
 
-More info here
-<https://jamanetwork.com/journals/jama/article-abstract/2756195>
+Read for more information  about studies using [ML in medicine](  
+https://jamanetwork.com/journals/jama/article-abstract/2756195)
+
+# About me
+
+I am a medical epidemiologist and a fellow of the American College of Epidemiology. These are the links for my [SCOPUS publication](https://www.scopus.com/authid/detail.uri?authorId=57194536466), my [GitHub](https://github.com/drkamarul) and [personal webpage](https://myanalytics.com.my/).
 
 # Inference and prediction
 
@@ -932,15 +936,15 @@ More info here
 
 # References
 
-1.  James, G., Witten, D., Hastie, T., & Tibshirani, R. (2021). An
-    introduction to statistical learning (2nd ed.) \[PDF\]. Springer.
-2.  Boehmke, Brad, and Brandon M. Greenwell. Hands-on machine learning
-    with R. Boca Raton, FL: CRC Press, 2020. Print.
-3.  [Classification with Tidymodels, Workflows and Recipes \| Jan
-    Kirenz](https://www.kirenz.com/post/2021-02-17-r-classification-tidymodels/)
-4.  https://www.tmwr.org/splitting.html
-5.  [Tidymodels: tidy machine learning in R
+1.  [Tidymodels: tidy machine learning in R
     (rebeccabarter.com)](https://www.rebeccabarter.com/blog/2020-03-25_machine_learning/?s=08)
+2.  [Classification with Tidymodels, Workflows and Recipes \| Jan
+    Kirenz](https://www.kirenz.com/post/2021-02-17-r-classification-tidymodels/)
+3.  James, G., Witten, D., Hastie, T., & Tibshirani, R. (2021). An
+    introduction to statistical learning (2nd ed.) \[PDF\]. Springer.
+4.  Boehmke, Brad, and Brandon M. Greenwell. Hands-on machine learning
+    with R. Boca Raton, FL: CRC Press, 2020. Print.
+5.  https://www.tmwr.org/splitting.html
 6.  [RStudio
     Education](https://education.rstudio.com/blog/2020/02/conf20-intro-ml/)
 7.  [A Gentle Introduction to tidymodels · R Views
